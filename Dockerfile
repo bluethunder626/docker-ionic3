@@ -13,12 +13,10 @@ RUN AZ_REPO=$(lsb_release -cs) \
     && echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 \
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-    && apt-get -y update
-    && apt-get -y install nodejs
-    && apt-get -y install ansible
-    && apt-get -y install python3-venv
-    && apt-get -y install python3-pip
-    && npm install -g @angular/cli@1.6.5
+    && apt-get -y update \
+    && apt-get -y install nodejs \
+    && apt-get -y install ansible \
+    && npm install -g @angular/cli@1.6.5 \
     && npm install -g ionic@3.20.1 cordova@8.0.0
 
 # Clean up APT when done.
